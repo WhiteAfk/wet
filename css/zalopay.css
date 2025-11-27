@@ -1,0 +1,414 @@
+/* Modern Root Variables */
+:root {
+    /* Core Colors */
+    --primary-color: #0068ff;
+    --primary-hover: #1a7aff;
+    --primary-light: rgba(0, 104, 255, 0.1);
+    --secondary-color: #00b2ff;
+    --accent-color: #38bdf8;
+    
+    /* Text Colors */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --text-muted: #94a3b8;
+    
+    /* UI Colors */
+    --border-color: #e2e8f0;
+    --background-light: #f0f7ff;
+    --background-dark: #0c1c3d;
+    
+    /* Status Colors */
+    --success-color: #10b981;
+    --success-bg: #f0fff4;
+    --success-border: #86efac;
+    --warning-color: #f59e0b;
+    --warning-bg: #fffbeb;
+    --warning-border: #fcd34d;
+    --error-color: #ef4444;
+    --error-bg: #fef2f2;
+    --error-border: #fca5a5;
+    
+    /* Shadows */
+    --container-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    --card-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
+    --hover-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+    
+    /* Gradients */
+    --gradient-1: linear-gradient(135deg, #0068ff 0%, #00b2ff 100%);
+    --gradient-2: linear-gradient(135deg, #38bdf8 0%, #0068ff 100%);
+    
+    /* Fonts */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-body);
+    background: var(--background-dark);
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at top right, rgba(0, 104, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at bottom left, rgba(0, 178, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    animation: gradient 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 3rem;
+    border-radius: 32px;
+    box-shadow: var(--container-shadow);
+    backdrop-filter: blur(20px);
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-1);
+    z-index: 1;
+}
+
+h1 {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.8em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h2 {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 600px;
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.zalo-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.zalo-info:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.zalo-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-1);
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.info-list li {
+    padding: 1.2rem;
+    color: var(--text-light);
+    font-size: 1.1em;
+    background: var(--background-light);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.info-list li:hover {
+    transform: translateX(5px);
+    background: white;
+    box-shadow: var(--card-shadow);
+}
+
+.info-list li:last-child {
+    margin-bottom: 0;
+}
+
+.info-list li strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0.5rem 1rem;
+    background: var(--primary-light);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.info-list li:hover strong {
+    background: var(--primary-color);
+    color: white;
+}
+
+.info-list li strong::after {
+    content: "Nhấp để sao chép";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.info-list li strong:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    bottom: -25px;
+}
+
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--success-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    transform: translateX(0);
+}
+
+.copy-notification i {
+    font-size: 1.2em;
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    margin: 1rem auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 4px solid white;
+    background: white;
+    padding: 1.5rem;
+    display: block;
+    position: relative;
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.qr-code:hover {
+    transform: scale(1.02);
+    box-shadow: var(--hover-shadow);
+}
+
+.qr-code::before {
+    content: '📱 Quét mã QR ZaloPay';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-1);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(0, 104, 255, 0.3);
+    letter-spacing: 0.01em;
+    animation: float 3s ease-in-out infinite;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    background: var(--background-light);
+    font-size: 1.1em;
+    border: 1px solid var(--border-color);
+}
+
+.back-link a:hover {
+    transform: translateX(-3px);
+    color: var(--primary-color);
+    background: white;
+    box-shadow: var(--hover-shadow);
+}
+
+.back-link a:hover i {
+    transform: translateX(-4px);
+}
+
+.back-link i {
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+    100% { transform: translateX(-50%) translateY(0px); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+        margin-bottom: 2rem;
+    }
+
+    .zalo-info {
+        padding: 1.5rem;
+    }
+
+    .info-list li {
+        font-size: 1em;
+        padding: 0.8rem 0;
+    }
+
+    .qr-code {
+        max-width: 280px;
+        margin: 1rem auto;
+        padding: 0.8rem;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/posts.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="js/animations.js" defer></script>
+    <title>Bài viết của wET</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bài viết của wET</h1>
+        <h2>Nơi tôi chia sẻ những điều thú vị</h2>
+        <div class="posts-container">
+            <article class="post-card">
+                <div class="post-image">
+                    <img src="img/thumbnail.png" alt="Post Image">
+                </div>
+                <div class="post-header">
+                    <h3 class="post-title">Đang tiến hành: Bài viết đầu tiên</h3>
+                    <div class="post-meta">
+                        <span class="meta-item">
+                            <i>🕒</i> Sắp ra mắt
+                        </span>
+                        <span class="meta-item">
+                            <i>✍️</i> wET
+                        </span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-excerpt">
+                        Các bài viết của tôi sẽ sớm xuất hiện ở đây. Tôi sẽ chia sẻ những câu chuyện thú vị mà tôi biết được.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Lập trình</span>
+                        <span class="tag">Gaming</span>
+                        <span class="tag">Du lịch</span>
+                        <span class="tag">Cuộc sống</span>
+                    </div>
+                </div>
+                <div class="post-footer">
+                    <a href="updating.html" class="read-more" data-post-link>
+                        Đọc thêm →
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← Quay lại trang chủ</a>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý animation chuyển trang
+        document.querySelectorAll('[data-post-link]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                
+                // Animation cho nút
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'pulseButton 0.5s';
+
+                // Animation cho toàn trang
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+                
+                setTimeout(() => {
+                    document.body.style.opacity = '0';
+                }, 100);
+
+                // Chuyển trang sau khi animation hoàn tất
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            });
+        });
+
+        // Animation khi trang được load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

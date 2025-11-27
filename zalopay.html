@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/zalopay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Donate qua ZaloPay | wET</title>
+</head>
+<body>
+    <div class="copy-notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Đã sao chép vào clipboard!</span>
+    </div>
+
+    <div class="container">
+        <h1>Chuyển khoản qua ZaloPay</h1>
+        <h2>Cảm ơn bạn đã quan tâm ủng hộ. Vui lòng quét mã QR hoặc chuyển khoản theo thông tin bên dưới.</h2>
+        
+        <div class="zalo-info">
+            <ul class="info-list">
+                <li>
+                    <span><i class="fas fa-phone"></i> Số điện thoại:</span>
+                    <strong onclick="copyToClipboard('0837763563', 'số điện thoại')">0837763563</strong>
+                </li>
+                <li>
+                    <span><i class="fas fa-user"></i> Chủ tài khoản:</span>
+                    <strong onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên tài khoản')">Võ Anh Vĩnh Kỳ</strong>
+                </li>
+            </ul>
+            
+            <img src="img/zalopay.jpg" alt="ZaloPay QR Code" class="qr-code">
+        </div>
+
+        <div class="back-link">
+            <a href="donate.html">
+                <i class="fas fa-arrow-left"></i>
+                <span>Quay lại trang Donate</span>
+            </a>
+        </div>
+    </div>
+    <script>
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.querySelector('.copy-notification');
+                notification.classList.add('show');
+                notification.querySelector('span').textContent = `Đã sao chép ${type} vào clipboard!`;
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Không thể sao chép: ', err);
+            });
+        }
+    </script>
+</body>

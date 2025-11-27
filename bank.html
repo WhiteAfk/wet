@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Chuyển khoản ngân hàng | wET</title>
+</head>
+<body>
+    <div class="copy-notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Đã sao chép vào clipboard!</span>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <h1>Chuyển khoản ngân hàng</h1>
+            <p class="subtitle">Cảm ơn bạn đã quan tâm ủng hộ. Vui lòng điền thông tin bên dưới.</p>
+        </div>
+        
+        <div class="payment-grid">
+            <div class="left-column">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> Thông tin tài khoản</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-university"></i> Ngân hàng</span>
+                            <span class="value">MB Bank (Ngân hàng Quân Đội)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-credit-card"></i> Số tài khoản</span>
+                            <span class="value highlight" onclick="copyToClipboard('5088882345', 'số tài khoản')">5088882345</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label"><i class="fas fa-user"></i> Chủ tài khoản</span>
+                            <span class="value highlight" onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên tài khoản')">Võ Anh Vĩnh Kỳ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Vui lòng kiểm tra kỹ thông tin</h4>
+                    </div>
+                    <ul class="notice-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tên người nhận: <strong>Võ Anh Vĩnh Kỳ</strong></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Số tài khoản: <strong>5088882345</strong></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Số tiền chuyển khoản phải khớp với số tiền đã nhập</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nội dung chuyển khoản phải giống như bạn đã điền</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="form-card">
+                    <h3><i class="fas fa-qrcode"></i> Tạo mã QR chuyển khoản</h3>
+                    <div class="form-content">
+                        <div class="input-group">
+                            <label><i class="fas fa-coins"></i> Số tiền chuyển khoản</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="amount" placeholder="Nhập số tiền (VD: 10,000 VNĐ)" autocomplete="off">
+                                <span class="input-icon">VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label><i class="fas fa-comment-alt"></i> Nội dung chuyển khoản</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="addInfo" placeholder="Nhập nội dung chuyển khoản" autocomplete="off">
+                            </div>
+                        </div>
+                        <input type="hidden" id="accountName" value="Vo Anh Vinh Ky">
+                        
+                        <button class="btn-generate" onclick="generateQR()">
+                            <span class="btn-content">
+                                <i class="fas fa-qrcode"></i>
+                                <span>Tạo mã QR</span>
+                            </span>
+                        </button>
+
+                        <div class="qr-container">
+                            <div id="statusMessage" class="status-message"></div>
+                            <img id="qrImage" class="qr-code" alt="QR Code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back-link">
+            <a href="donate.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Quay lại trang Donate</span>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.querySelector('.copy-notification');
+                notification.classList.add('show');
+                notification.querySelector('span').textContent = `Đã sao chép ${type} vào clipboard!`;
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Không thể sao chép: ', err);
+            });
+        }
+
+        function showStatus(message, isError = false) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.style.color = isError ? '#e53e3e' : '#38a169';
+            statusEl.style.display = 'block';
+            statusEl.style.opacity = '1';
+            
+            if (isError) {
+                setTimeout(() => {
+                    statusEl.style.opacity = '0';
+                    setTimeout(() => statusEl.style.display = 'none', 300);
+                }, 3000);
+            }
+        }
+
+        function generateQR() {
+            const amount = document.getElementById('amount').value.trim().replace(/[,.]/g, '');
+            const addInfo = document.getElementById('addInfo').value.trim();
+            const accountName = document.getElementById('accountName').value;
+            const qrImage = document.getElementById('qrImage');
+            const btn = document.querySelector('.btn-generate');
+
+            if (!amount || isNaN(amount) || amount <= 0) {
+                showStatus('Vui lòng nhập số tiền hợp lệ', true);
+                document.getElementById('amount').focus();
+                return;
+            }
+
+            if (!addInfo) {
+                showStatus('Vui lòng nhập lời nhắn của bạn', true);
+                document.getElementById('addInfo').focus();
+                return;
+            }
+
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            qrImage.style.opacity = '0.5';
+            qrImage.style.display = 'block';
+            showStatus('Đang tạo mã QR...');
+
+            const formattedAmount = parseInt(amount).toLocaleString('vi-VN') + ' VNĐ';
+
+            const newImage = new Image();
+            newImage.onload = function() {
+                qrImage.src = this.src;
+                qrImage.style.opacity = '1';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                showStatus(`
+                    ✨ Thông tin giao dịch đã sẵn sàng
+                    ───────────────────────
+                    💰 Số tiền: ${formattedAmount}
+                    📝 Nội dung: ${addInfo}
+                    👤 Người nhận: ${accountName}
+                    ───────────────────────
+                    📱 Quét mã QR để thanh toán
+                `);
+                
+                qrImage.style.animation = 'fadeIn 0.5s ease-out forwards';
+            };
+            
+            newImage.onerror = function() {
+                showStatus('Có lỗi xảy ra khi tạo mã QR. Vui lòng thử lại!', true);
+                qrImage.style.display = 'none';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            };
+            
+            newImage.src = `https://img.vietqr.io/image/MBBank-5088882345-qr_only.png?amount=${amount}&addInfo=${encodeURIComponent(addInfo)}&accountName=${encodeURIComponent(accountName)}`;
+        }
+
+        document.getElementById('amount').addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            if (value) {
+                value = parseInt(value).toLocaleString('vi-VN');
+                this.value = value;
+            }
+        });
+
+        document.getElementById('addInfo').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateQR();
+            }
+        });
+    </script>
+</body>
