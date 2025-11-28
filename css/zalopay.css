@@ -379,36 +379,164 @@ h2 {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     body {
         padding: 1rem;
     }
 
     .container {
+        max-width: 600px;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.4em;
+    }
+
+    h2 {
+        font-size: 1.15em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    .container {
+        max-width: 100%;
         padding: 1.5rem;
+        border-radius: 20px;
+        margin: 0;
     }
 
     h1 {
         font-size: 2em;
+        margin-bottom: 0.75rem;
     }
 
     h2 {
-        font-size: 1.1em;
-        margin-bottom: 2rem;
+        font-size: 1.05em;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
     }
 
     .zalo-info {
-        padding: 1.5rem;
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-list {
+        margin-bottom: 1.5rem;
+        gap: 0.75rem;
     }
 
     .info-list li {
+        font-size: 0.95em;
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .info-list li strong {
         font-size: 1em;
-        padding: 0.8rem 0;
+        padding: 0.4rem 0.8rem;
+        width: 100%;
+    }
+
+    .info-list li:hover strong {
+        background: var(--primary-color);
     }
 
     .qr-code {
-        max-width: 280px;
+        max-width: 260px;
+        height: auto;
         margin: 1rem auto;
+        padding: 1rem;
+        border: 3px solid white;
+    }
+
+    .qr-code::before {
+        font-size: 0.8em;
+        padding: 0.5rem 1rem;
+        top: -10px;
+    }
+
+    .back-link {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .back-link a {
+        padding: 0.8rem 1.5rem;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .container {
+        padding: 1.25rem;
+        border-radius: 16px;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
+    h2 {
+        font-size: 0.95em;
+        margin-bottom: 1.25rem;
+    }
+
+    .zalo-info {
+        padding: 1rem;
+    }
+
+    .info-list li {
+        font-size: 0.9em;
+        padding: 0.6rem;
+    }
+
+    .info-list li span {
+        font-size: 0.9em;
+    }
+
+    .info-list li strong {
+        font-size: 0.95em;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .qr-code {
+        max-width: 240px;
         padding: 0.8rem;
+        border: 2px solid white;
+        margin: 0.75rem auto;
+    }
+
+    .qr-code::before {
+        font-size: 0.75em;
+        padding: 0.4rem 0.8rem;
+        top: -8px;
+    }
+
+    .back-link {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    .back-link a {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95em;
+        gap: 0.5rem;
+    }
+
+    .back-link a i {
+        font-size: 0.9em;
     }
 }

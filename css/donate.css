@@ -230,64 +230,170 @@ h1 {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     body {
         padding: 1rem;
     }
 
     .container {
+        max-width: 600px;
         padding: 2rem;
-        border-radius: 24px;
     }
 
     h1 {
-        font-size: 2.2em;
-    }
-
-    .header-icon {
-        width: 64px;
-        height: 64px;
+        font-size: 2.4em;
     }
 
     .subtitle {
-        font-size: 1.1em;
+        font-size: 1.05em;
+    }
+
+    .header-icon {
+        width: 72px;
+        height: 72px;
     }
 
     .donation-methods {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-    }
-
-    .donation-card {
-        padding: 1.5rem;
-    }
-
-    .donation-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.3em;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.75rem;
+    }
+
     .container {
         padding: 1.5rem;
+        border-radius: 20px;
+        margin: 0;
+        max-width: 100%;
     }
 
     h1 {
         font-size: 2em;
+        margin-bottom: 0.75rem;
     }
 
     .header-icon {
-        width: 56px;
-        height: 56px;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.25rem;
+    }
+
+    .header-icon i {
+        font-size: 2.2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin: 0 auto 1.5rem;
+    }
+
+    .donation-methods {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .donation-card {
+        padding: 1.25rem;
+    }
+
+    .donation-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .donation-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2em;
     }
 
     .donation-title {
-        font-size: 1.1em;
+        font-size: 1.15em;
+        margin: 0 0 0.3rem;
     }
 
     .donation-description {
+        font-size: 0.92em;
+    }
+
+    .back-link {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .back-button {
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .container {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.75em;
+        margin-bottom: 0.5rem;
+    }
+
+    .header-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 1rem;
+    }
+
+    .header-icon i {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+        margin-bottom: 1.25rem;
+    }
+
+    .donation-methods {
+        gap: 1rem;
+    }
+
+    .donation-card {
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+
+    .donation-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+
+    .donation-title {
+        font-size: 1.05em;
+    }
+
+    .donation-description {
+        font-size: 0.88em;
+    }
+
+    .card-arrow {
+        font-size: 1em;
+    }
+
+    .back-link {
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+    }
+
+    .back-button {
+        padding: 0.65rem 1.2rem;
         font-size: 0.9em;
     }
 }

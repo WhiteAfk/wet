@@ -326,11 +326,14 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 
     .container {
         padding: 1.5rem;
+        border-radius: 20px;
+        margin: 0;
+        max-width: 100%;
     }
 
     h1 {
@@ -338,28 +341,133 @@ h2 {
     }
 
     h2 {
-        font-size: 1.1em;
+        font-size: 1.05em;
+    }
+
+    .posts-container {
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .post-card {
+        border-radius: 18px;
+    }
+
+    .post-header {
+        padding: 1.25rem;
+    }
+
+    .post-content {
+        padding: 1.25rem;
+    }
+
+    .post-title {
+        font-size: 1.25em;
+        margin-bottom: 0.75rem;
     }
 
     .post-image {
         height: 200px;
     }
 
+    .post-meta {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.9em;
+    }
+
+    .meta-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9em;
+    }
+
+    .read-more {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.95em;
+    }
+
+    .back-link {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .back-link a {
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .container {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.65em;
+    }
+
+    h2 {
+        font-size: 0.95em;
+    }
+
+    .posts-container {
+        gap: 1rem;
+        margin: 1.25rem 0;
+    }
+
+    .post-card {
+        border-radius: 14px;
+    }
+
     .post-header {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
     .post-content {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
     .post-title {
-        font-size: 1.3em;
+        font-size: 1.1em;
+        margin-bottom: 0.6rem;
+    }
+
+    .post-image {
+        height: 160px;
     }
 
     .post-meta {
-        flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.5rem;
+        font-size: 0.85em;
+    }
+
+    .meta-item {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.8em;
+    }
+
+    .post-excerpt {
+        font-size: 0.95em;
+    }
+
+    .read-more {
+        padding: 0.6rem 1rem;
+        font-size: 0.9em;
+    }
+
+    .back-link {
+        margin-top: 1.5rem;
+        padding-top: 1.2rem;
+    }
+
+    .back-link a {
+        padding: 0.65rem 1.2rem;
+        font-size: 0.9em;
     }
 }
 
