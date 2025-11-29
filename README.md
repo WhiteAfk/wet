@@ -1,4 +1,4 @@
-# wET - Personal Portfolio Website
+# wET
 
 Trang web cá nhân được thiết kế đẹp mắt với giao diện hiện đại, tối ưu hóa hoàn toàn cho các thiết bị di động.
 

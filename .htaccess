@@ -1,0 +1,24 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Remove .html extension from URLs (optional)
+    # RewriteCond %{SCRIPT_FILENAME} !-f
+    # RewriteCond %{SCRIPT_FILENAME} !-d
+    # RewriteRule ^(.*)$ $1.html [L]
+    
+    # Handle 404 errors - serve 404.html
+    ErrorDocument 404 /404.html
+</IfModule>
+
+# Alternative method using DirectoryIndex
+<IfModule mod_dir.c>
+    DirectoryIndex index.html index.php
+</IfModule>
+
+# Handle missing files and directories
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /404.html [L]
+</IfModule>

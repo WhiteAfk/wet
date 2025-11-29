@@ -1,0 +1,16 @@
+// GitHub Pages configuration
+// Place this in your repository as _config.yml
+
+# GitHub Pages will automatically serve 404.html
+# when a page is not found
+
+# Additional options:
+title: wET
+description: Trang web cá nhân - Personal Portfolio
+locale: vi_VN
+
+# Custom 404 page (GitHub Pages supports this natively)
+# Just having 404.html in root is enough
+
+plugins:
+  - jekyll-feed
