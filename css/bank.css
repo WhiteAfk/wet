@@ -255,19 +255,19 @@ h2 {
 /* Enhanced Responsive Design */
 @media screen and (max-width: 768px) {
     body {
-        padding: 0.75rem;
+        padding: 0.5rem;
     }
 
     .container {
-        padding: 1.25rem;
-        border-radius: 18px;
+        padding: 1rem;
+        border-radius: 16px;
         margin: 0;
         max-width: 100%;
     }
 
     .payment-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .left-column {
@@ -275,8 +275,8 @@ h2 {
     }
 
     h1 {
-        font-size: 1.85em;
-        margin-bottom: 0.5rem;
+        font-size: 1.8em;
+        margin-bottom: 0.4rem;
     }
 
     .header-icon {
@@ -286,7 +286,7 @@ h2 {
     }
 
     .header-icon i {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .subtitle {
@@ -297,100 +297,100 @@ h2 {
     .info-card,
     .form-card,
     .notice-card {
-        padding: 1.25rem;
+        padding: 1rem;
         margin-bottom: 0.75rem;
-        border-radius: 16px;
+        border-radius: 14px;
     }
 
     .info-card h3,
     .form-card h3 {
-        font-size: 1.2em;
-        margin-bottom: 1rem;
+        font-size: 1.1em;
+        margin-bottom: 0.75rem;
     }
 
     .info-item {
-        padding: 0.65rem;
+        padding: 0.6rem;
     }
 
     .label {
-        font-size: 0.9em;
+        font-size: 0.88em;
     }
 
     .value {
-        font-size: 1.05em;
+        font-size: 1em;
+        padding-left: 0.5rem;
     }
 
     .value.highlight {
-        font-size: 1em;
-        margin-left: 0.5rem;
-        padding: 0.35rem 0.7rem;
+        font-size: 0.95em;
+        padding: 0.3rem 0.6rem;
     }
 
     .notice-header {
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.6rem;
-    }
-
-    .notice-header i {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2em;
-    }
-
-    .notice-header h4 {
-        font-size: 1.1em;
-    }
-
-    .notice-list li {
-        padding: 0.65rem;
-        font-size: 0.88em;
+        margin-bottom: 0.6rem;
         gap: 0.75rem;
     }
 
+    .notice-header i {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1em;
+    }
+
+    .notice-header h4 {
+        font-size: 1em;
+    }
+
+    .notice-list li {
+        padding: 0.6rem;
+        font-size: 0.85em;
+        gap: 0.6rem;
+    }
+
     .input-group {
-        gap: 0.35rem;
-        margin-bottom: 1rem;
+        gap: 0.3rem;
+        margin-bottom: 0.9rem;
     }
 
     .input-group label {
-        font-size: 0.88em;
+        font-size: 0.85em;
     }
 
     input[type="text"] {
-        padding: 0.75rem;
+        padding: 0.7rem;
         font-size: 0.9em;
         height: 2.8rem;
     }
 
     .btn-generate {
-        padding: 0.75rem;
+        padding: 0.7rem;
         font-size: 0.95em;
     }
 
     .btn-content {
-        gap: 0.6rem;
+        gap: 0.5rem;
     }
 
     .qr-code {
-        max-width: 220px;
+        max-width: 240px;
         padding: 0.8rem;
         margin: 1.5rem auto;
     }
 
     .qr-code::before {
-        font-size: 0.8em;
-        padding: 0.5rem 1rem;
+        font-size: 0.75em;
+        padding: 0.4rem 0.9rem;
     }
 
     .back-button {
-        padding: 0.75rem 1.4rem;
-        font-size: 0.95em;
+        padding: 0.65rem 1.2rem;
+        font-size: 0.9em;
     }
 
     .footer {
         margin-top: 1.5rem;
         padding-top: 1.2rem;
-        font-size: 0.88em;
+        font-size: 0.85em;
     }
 }
 
@@ -400,7 +400,7 @@ h2 {
     }
 
     .container {
-        padding: 1rem;
+        padding: 0.9rem;
         margin: 0;
         border-radius: 14px;
         min-height: 100vh;
@@ -413,90 +413,90 @@ h2 {
     }
 
     .header-icon i {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     h1 {
-        font-size: 1.65em;
-        margin-bottom: 0.4rem;
+        font-size: 1.6em;
+        margin-bottom: 0.3rem;
     }
 
     .subtitle {
-        font-size: 0.9em;
+        font-size: 0.85em;
         margin-bottom: 1rem;
     }
 
     .payment-grid {
-        gap: 1rem;
+        gap: 0.9rem;
     }
 
     .info-card,
     .form-card,
     .notice-card {
-        padding: 1rem;
-        border-radius: 14px;
+        padding: 0.85rem;
+        border-radius: 12px;
         margin-bottom: 0.5rem;
     }
 
     .info-card h3,
     .form-card h3 {
-        font-size: 1.1em;
-        margin-bottom: 0.75rem;
+        font-size: 1em;
+        margin-bottom: 0.65rem;
     }
 
     .info-item {
-        padding: 0.55rem;
+        padding: 0.5rem;
     }
 
     .label {
-        font-size: 0.85em;
+        font-size: 0.82em;
     }
 
     .value {
-        font-size: 1em;
-        padding-left: 1rem;
+        font-size: 0.95em;
+        padding-left: 0.5rem;
     }
 
     .value.highlight {
-        font-size: 0.95em;
-        margin-left: 0.5rem;
-        padding: 0.25rem 0.5rem;
+        font-size: 0.9em;
+        margin-left: 0.4rem;
+        padding: 0.2rem 0.45rem;
     }
 
     .notice-header {
-        gap: 0.75rem;
-        margin-bottom: 0.6rem;
-        padding-bottom: 0.5rem;
+        gap: 0.6rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
     }
 
     .notice-header i {
-        width: 30px;
-        height: 30px;
-        font-size: 1.1em;
-    }
-
-    .notice-header h4 {
+        width: 28px;
+        height: 28px;
         font-size: 1em;
     }
 
+    .notice-header h4 {
+        font-size: 0.95em;
+    }
+
     .notice-list li {
-        padding: 0.55rem;
-        font-size: 0.82em;
+        padding: 0.5rem;
+        font-size: 0.8em;
         gap: 0.5rem;
     }
 
     .notice-list i {
-        font-size: 0.95em;
-        margin-top: 0.1rem;
+        font-size: 0.9em;
+        margin-top: 0.05rem;
     }
 
     .input-group {
-        gap: 0.3rem;
+        gap: 0.25rem;
         margin-bottom: 0.8rem;
     }
 
     .input-group label {
-        font-size: 0.82em;
+        font-size: 0.8em;
     }
 
     input[type="text"] {
@@ -513,7 +513,7 @@ h2 {
     }
 
     .btn-content {
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .btn-content span {
@@ -528,19 +528,19 @@ h2 {
     }
 
     .qr-code::before {
-        font-size: 0.7em;
-        padding: 0.35rem 0.7rem;
+        font-size: 0.65em;
+        padding: 0.3rem 0.6rem;
         top: -8px;
     }
 
     .back-button {
-        padding: 0.65rem 1.1rem;
-        font-size: 0.9em;
-        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85em;
+        gap: 0.4rem;
     }
 
     .back-button i {
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
 
     .footer {

@@ -398,66 +398,61 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-        padding: 0.75rem;
+        padding: 0.5rem;
     }
 
     .container {
         max-width: 100%;
-        padding: 1.5rem;
-        border-radius: 20px;
+        padding: 1rem;
+        border-radius: 16px;
         margin: 0;
     }
 
     h1 {
-        font-size: 2em;
-        margin-bottom: 0.75rem;
+        font-size: 1.8em;
+        margin-bottom: 0.5rem;
     }
 
     h2 {
-        font-size: 1.05em;
+        font-size: 1em;
         margin-bottom: 1.5rem;
         line-height: 1.5;
     }
 
     .momo-info {
-        padding: 1.25rem;
+        padding: 1rem;
         margin-bottom: 1.5rem;
     }
 
     .info-list {
         margin-bottom: 1.5rem;
-        gap: 0.75rem;
+        gap: 0.65rem;
     }
 
     .info-list li {
-        font-size: 0.95em;
-        padding: 0.75rem;
+        font-size: 0.9em;
+        padding: 0.7rem;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .info-list li strong {
-        font-size: 1em;
-        padding: 0.4rem 0.8rem;
-        width: 100%;
-    }
-
-    .info-list li:hover strong {
-        background: var(--primary-color);
+        font-size: 0.95em;
+        padding: 0.35rem 0.7rem;
     }
 
     .qr-code {
-        max-width: 260px;
+        max-width: 240px;
         height: auto;
         margin: 1rem auto;
-        padding: 1rem;
+        padding: 0.8rem;
         border: 3px solid white;
     }
 
     .qr-code::before {
-        font-size: 0.8em;
-        padding: 0.5rem 1rem;
+        font-size: 0.75em;
+        padding: 0.4rem 0.9rem;
         top: -10px;
     }
 
@@ -467,38 +462,38 @@ h2 {
     }
 
     .back-link a {
-        padding: 0.8rem 1.5rem;
-        font-size: 1em;
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95em;
     }
 }
 
 @media screen and (max-width: 480px) {
     body {
-        padding: 0.5rem;
+        padding: 0.4rem;
     }
 
     .container {
-        padding: 1.25rem;
-        border-radius: 16px;
+        padding: 0.9rem;
+        border-radius: 14px;
         margin: 0;
     }
 
     h1 {
-        font-size: 1.75em;
+        font-size: 1.6em;
     }
 
     h2 {
-        font-size: 0.95em;
-        margin-bottom: 1.25rem;
+        font-size: 0.85em;
+        margin-bottom: 1rem;
     }
 
     .momo-info {
-        padding: 1rem;
+        padding: 0.85rem;
     }
 
     .info-list li {
-        font-size: 0.9em;
-        padding: 0.6rem;
+        font-size: 0.85em;
+        padding: 0.55rem;
     }
 
     .info-list li span {
@@ -506,20 +501,20 @@ h2 {
     }
 
     .info-list li strong {
-        font-size: 0.95em;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.9em;
+        padding: 0.25rem 0.5rem;
     }
 
     .qr-code {
-        max-width: 240px;
-        padding: 0.8rem;
+        max-width: 200px;
+        padding: 0.7rem;
         border: 2px solid white;
         margin: 0.75rem auto;
     }
 
     .qr-code::before {
-        font-size: 0.75em;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.65em;
+        padding: 0.3rem 0.6rem;
         top: -8px;
     }
 
@@ -529,9 +524,9 @@ h2 {
     }
 
     .back-link a {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.95em;
-        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85em;
+        gap: 0.4rem;
     }
 
     .back-link a i {

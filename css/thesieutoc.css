@@ -547,13 +547,13 @@ select:focus, input[type="text"]:focus {
 
 @media screen and (max-width: 768px) {
     .container {
-        padding: 1.5rem;
+        padding: 1.25rem;
         margin: 0.5rem;
     }
 
     .card-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .left-column {
@@ -561,75 +561,137 @@ select:focus, input[type="text"]:focus {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1em;
     }
 
     .header-icon {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
     }
 
     .form-card, .info-card, .notice-card {
-        padding: 1.5rem;
+        padding: 1rem;
+        border-radius: 16px;
     }
 
     .rate-list li {
-        padding: 0.6rem;
-        font-size: 0.9em;
+        padding: 0.5rem;
+        font-size: 0.85em;
     }
 
     select, input[type="text"] {
-        height: 3rem;
-        font-size: 0.95em;
+        height: 2.8rem;
+        font-size: 0.9em;
+        padding: 0.65rem 1rem;
     }
 
     .btn-submit {
-        padding: 0.8rem;
+        padding: 0.7rem;
+        font-size: 0.95em;
+    }
+
+    .back-button {
+        padding: 0.65rem 1.4rem;
+        font-size: 0.95em;
     }
 }
 
 @media screen and (max-width: 480px) {
     body {
-        padding: 0;
+        padding: 0.4rem;
     }
 
     .container {
-        margin: 0;
-        border-radius: 0;
-        min-height: 100vh;
+        padding: 0.9rem;
+        margin: 0.3rem;
+        border-radius: 14px;
     }
 
-    .header-icon {
-        width: 52px;
-        height: 52px;
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
+        margin-bottom: 0.4rem;
     }
 
     .subtitle {
-        font-size: 0.95em;
+        font-size: 0.85em;
+        margin-bottom: 0.8rem;
+    }
+
+    .header-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 0.5rem;
     }
 
     .form-card, .info-card, .notice-card {
-        padding: 1.25rem;
-        border-radius: 16px;
+        padding: 0.85rem;
+        border-radius: 12px;
     }
 
-    .input-group label {
+    .form-card h3, .info-card h3, .notice-card h3 {
+        font-size: 1.05em;
+        margin-bottom: 0.6rem;
+    }
+
+    .rate-list {
+        gap: 0.3rem;
+    }
+
+    .rate-list li {
+        padding: 0.4rem;
+        font-size: 0.8em;
+    }
+
+    label {
         font-size: 0.9em;
+        margin-bottom: 0.4rem;
     }
 
     select, input[type="text"] {
+        height: 2.4rem;
+        font-size: 0.85em;
+        padding: 0.5rem 0.8rem;
+        border-radius: 10px;
+        margin-bottom: 0.8rem;
+    }
+
+    .btn-submit {
+        padding: 0.6rem 1.2rem;
         font-size: 0.9em;
-        height: 2.8rem;
-        padding: 0.7rem 1rem;
+        border-radius: 10px;
+    }
+
+    .back-button {
+        padding: 0.55rem 1.2rem;
+        font-size: 0.9em;
+        border-radius: 10px;
+    }
+
+    .notice-card {
+        gap: 0.6rem;
+    }
+
+    .notice-card strong {
+        font-size: 0.95em;
+    }
+
+    .info-card p {
+        font-size: 0.85em;
+        line-height: 1.4;
     }
 
     .value-info {
-        padding: 0.8rem;
-        font-size: 0.9em;
+        padding: 0.7rem;
+        font-size: 0.85em;
     }
 }
 

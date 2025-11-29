@@ -326,102 +326,33 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-        padding: 0.75rem;
+        padding: 0.5rem;
     }
 
     .container {
-        padding: 1.5rem;
-        border-radius: 20px;
+        padding: 1rem;
+        border-radius: 16px;
         margin: 0;
         max-width: 100%;
     }
 
     h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.05em;
-    }
-
-    .posts-container {
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-
-    .post-card {
-        border-radius: 18px;
-    }
-
-    .post-header {
-        padding: 1.25rem;
-    }
-
-    .post-content {
-        padding: 1.25rem;
-    }
-
-    .post-title {
-        font-size: 1.25em;
-        margin-bottom: 0.75rem;
-    }
-
-    .post-image {
-        height: 200px;
-    }
-
-    .post-meta {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        font-size: 0.9em;
-    }
-
-    .meta-item {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9em;
-    }
-
-    .read-more {
-        padding: 0.65rem 1.2rem;
-        font-size: 0.95em;
-    }
-
-    .back-link {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-    }
-
-    .back-link a {
-        padding: 0.75rem 1.4rem;
-        font-size: 0.95em;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    body {
-        padding: 0.5rem;
-    }
-
-    .container {
-        padding: 1.25rem;
-        border-radius: 16px;
-    }
-
-    h1 {
-        font-size: 1.65em;
+        font-size: 1.8em;
+        margin-bottom: 0.3rem;
     }
 
     h2 {
         font-size: 0.95em;
+        margin-bottom: 1.5rem;
     }
 
     .posts-container {
         gap: 1rem;
-        margin: 1.25rem 0;
+        margin: 1rem 0;
     }
 
     .post-card {
-        border-radius: 14px;
+        border-radius: 16px;
     }
 
     .post-header {
@@ -433,26 +364,37 @@ h2 {
     }
 
     .post-title {
-        font-size: 1.1em;
-        margin-bottom: 0.6rem;
+        font-size: 1.15em;
+        margin-bottom: 0.5rem;
     }
 
     .post-image {
-        height: 160px;
+        height: 180px;
     }
 
     .post-meta {
+        flex-wrap: wrap;
         gap: 0.5rem;
         font-size: 0.85em;
     }
 
     .meta-item {
-        padding: 0.35rem 0.65rem;
+        padding: 0.3rem 0.6rem;
         font-size: 0.8em;
     }
 
     .post-excerpt {
-        font-size: 0.95em;
+        font-size: 0.9em;
+    }
+
+    .tags {
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8em;
     }
 
     .read-more {
@@ -462,12 +404,99 @@ h2 {
 
     .back-link {
         margin-top: 1.5rem;
-        padding-top: 1.2rem;
+        padding-top: 1rem;
     }
 
     .back-link a {
         padding: 0.65rem 1.2rem;
         font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.4rem;
+    }
+
+    .container {
+        padding: 0.9rem;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 0.2rem;
+    }
+
+    h2 {
+        font-size: 0.85em;
+        margin-bottom: 1rem;
+    }
+
+    .posts-container {
+        gap: 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .post-card {
+        border-radius: 14px;
+    }
+
+    .post-header {
+        padding: 0.8rem;
+    }
+
+    .post-content {
+        padding: 0.8rem;
+    }
+
+    .post-title {
+        font-size: 1em;
+        margin-bottom: 0.4rem;
+    }
+
+    .post-image {
+        height: 150px;
+    }
+
+    .post-meta {
+        gap: 0.4rem;
+        font-size: 0.75em;
+    }
+
+    .meta-item {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75em;
+    }
+
+    .post-excerpt {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .tags {
+        margin-top: 0.75rem;
+        gap: 0.35rem;
+    }
+
+    .tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7em;
+    }
+
+    .read-more {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.8em;
+    }
+
+    .back-link {
+        margin-top: 1.25rem;
+        padding-top: 0.9rem;
+    }
+
+    .back-link a {
+        padding: 0.6rem 1rem;
+        font-size: 0.85em;
     }
 }
 
