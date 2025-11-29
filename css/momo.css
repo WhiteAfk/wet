@@ -46,7 +46,7 @@ body {
     font-family: var(--font-body);
     background: var(--background-dark);
     margin: 0;
-    padding: 2rem;
+    padding: 1.5rem;
     min-height: 100vh;
     color: var(--text-dark);
     display: flex;
@@ -79,7 +79,7 @@ body::before {
     max-width: 800px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.98);
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 32px;
     box-shadow: var(--container-shadow);
     backdrop-filter: blur(20px);
@@ -398,14 +398,14 @@ h2 {
 
 @media screen and (max-width: 768px) {
     body {
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .container {
         max-width: 100%;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 16px;
-        margin: 0;
+        margin: 0 auto;
     }
 
     h1 {
@@ -469,13 +469,13 @@ h2 {
 
 @media screen and (max-width: 480px) {
     body {
-        padding: 0.4rem;
+        padding: 0.75rem;
     }
 
     .container {
-        padding: 0.9rem;
+        padding: 1.2rem;
         border-radius: 14px;
-        margin: 0;
+        margin: 0 auto;
     }
 
     h1 {
