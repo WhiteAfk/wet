@@ -1,57 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/zalopay.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="description" content="Chuyển khoản qua ZaloPay. Quét mã QR hoặc chuyển khoản trực tiếp.">
+    <meta name="keywords" content="ZaloPay, Ví điện tử, Chuyển khoản, QR Code">
+    <meta property="og:title" content="Donate qua ZaloPay">
+    <meta property="og:description" content="Chuyển khoản qua ZaloPay">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://wet-dev.netlify.app/zalopay.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/zalopay.css">
+    <link rel="stylesheet" href="css/animations.css">
     <title>Donate qua ZaloPay | wET</title>
 </head>
 <body>
-    <div class="copy-notification">
+    <!-- Copy Notification -->
+    <div class="copy-notification" role="alert" aria-live="polite">
         <i class="fas fa-check-circle"></i>
         <span>Đã sao chép vào clipboard!</span>
     </div>
 
     <div class="container">
+        <!-- Header -->
         <h1>Chuyển khoản qua ZaloPay</h1>
         <h2>Cảm ơn bạn đã quan tâm ủng hộ. Vui lòng quét mã QR hoặc chuyển khoản theo thông tin bên dưới.</h2>
         
-        <div class="zalo-info">
-            <ul class="info-list">
-                <li>
+        <!-- ZaloPay Info Section -->
+        <section class="zalo-info">
+            <ul class="info-list" role="list">
+                <li role="listitem">
                     <span><i class="fas fa-phone"></i> Số điện thoại:</span>
-                    <strong onclick="copyToClipboard('0837763563', 'số điện thoại')">0837763563</strong>
+                    <strong onclick="copyToClipboard('0837763563', 'số điện thoại')" role="button" tabindex="0" title="Nhấp để sao chép">0837763563</strong>
                 </li>
-                <li>
+                <li role="listitem">
                     <span><i class="fas fa-user"></i> Chủ tài khoản:</span>
-                    <strong onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên tài khoản')">Võ Anh Vĩnh Kỳ</strong>
+                    <strong onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên tài khoản')" role="button" tabindex="0" title="Nhấp để sao chép">Võ Anh Vĩnh Kỳ</strong>
                 </li>
             </ul>
-            
-            <img src="img/zalopay.jpg" alt="ZaloPay QR Code" class="qr-code">
-        </div>
 
-        <div class="back-link">
-            <a href="donate.html">
+            <!-- QR Code Image -->
+            <img src="img/zalopay.jpg" alt="ZaloPay QR Code - Quét để chuyển khoản" class="qr-code" loading="lazy">
+        </section>
+
+        <!-- Back Link -->
+        <footer class="back-link">
+            <a href="donate.html" title="Quay lại trang Donate">
                 <i class="fas fa-arrow-left"></i>
-                <span>Quay lại trang Donate</span>
+                <span>Quay lại</span>
             </a>
-        </div>
+        </footer>
     </div>
+
+    <script src="js/animations.js" defer></script>
     <script>
         function copyToClipboard(text, type) {
             navigator.clipboard.writeText(text).then(() => {
                 const notification = document.querySelector('.copy-notification');
                 notification.classList.add('show');
-                notification.querySelector('span').textContent = `Đã sao chép ${type} vào clipboard!`;
+                notification.querySelector('span').textContent = `Đã sao chép ${type}!`;
                 
                 setTimeout(() => {
                     notification.classList.remove('show');
                 }, 2000);
             }).catch(err => {
-                console.error('Không thể sao chép: ', err);
+                console.error('Copy error:', err);
             });
         }
+
+        // Allow keyboard activation for copy buttons
+        document.querySelectorAll('strong[onclick]').forEach(el => {
+            el.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    this.click();
+                }
+            });
+        });
     </script>
 </body>
+</html>

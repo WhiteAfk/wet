@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/posts.css">
-    <link rel="stylesheet" type="text/css" href="css/animations.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="js/animations.js" defer></script>
-    <title>Bài viết của wET</title>
+    <meta name="description" content="Bài viết của wET. Chia sẻ những kinh nghiệm và kiến thức về lập trình, cuộc sống và công nghệ.">
+    <meta name="keywords" content="Blog, Bài viết, Chia sẻ, Lập trình">
+    <meta property="og:title" content="Bài viết của wET">
+    <meta property="og:description" content="Nơi tôi chia sẻ những điều thú vị">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://wet-dev.netlify.app/posts.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/posts.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <title>Bài viết | wET</title>
 </head>
 <body>
     <div class="container">
-        <h1>Bài viết của wET</h1>
-        <h2>Nơi tôi chia sẻ những điều thú vị</h2>
-        <div class="posts-container">
+        <!-- Header -->
+        <header class="posts-header">
+            <h1>Bài viết của wET</h1>
+            <h2>Nơi tôi chia sẻ những điều thú vị</h2>
+        </header>
+
+        <!-- Posts Grid -->
+        <section class="posts-container">
             <article class="post-card">
                 <div class="post-image">
-                    <img src="img/thumbnail.png" alt="Post Image">
+                    <img src="img/thumbnail.png" alt="Bài viết: Những thứ thú vị" loading="lazy">
                 </div>
                 <div class="post-header">
                     <h3 class="post-title">Đang tiến hành: Bài viết đầu tiên</h3>
                     <div class="post-meta">
-                        <span class="meta-item">
-                            <i>🕒</i> Sắp ra mắt
+                        <span class="meta-item" title="Ngày đăng">
+                            <i class="far fa-calendar"></i> Sắp ra mắt
                         </span>
-                        <span class="meta-item">
-                            <i>✍️</i> wET
+                        <span class="meta-item" title="Tác giả">
+                            <i class="fas fa-user"></i> wET
                         </span>
                     </div>
                 </div>
@@ -41,54 +51,21 @@
                     </div>
                 </div>
                 <div class="post-footer">
-                    <a href="updating.html" class="read-more" data-post-link>
-                        Đọc thêm →
+                    <a href="updating.html" class="read-more" title="Đọc bài viết">
+                        Đọc thêm <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </article>
-        </div>
+        </section>
 
-        <div class="back-link">
-            <a href="index.html">← Quay lại trang chủ</a>
-        </div>
+        <!-- Back Link -->
+        <footer class="back-link">
+            <a href="index.html" title="Quay lại trang chủ">
+                <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+            </a>
+        </footer>
     </div>
 
-    <script>
-        // Xử lý animation chuyển trang
-        document.querySelectorAll('[data-post-link]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const href = this.getAttribute('href');
-                
-                // Animation cho nút
-                this.style.animation = 'none';
-                this.offsetHeight; // Trigger reflow
-                this.style.animation = 'pulseButton 0.5s';
-
-                // Animation cho toàn trang
-                document.body.style.opacity = '1';
-                document.body.style.transition = 'opacity 0.5s ease';
-                
-                setTimeout(() => {
-                    document.body.style.opacity = '0';
-                }, 100);
-
-                // Chuyển trang sau khi animation hoàn tất
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500);
-            });
-        });
-
-        // Animation khi trang được load
-        document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-    </script>
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

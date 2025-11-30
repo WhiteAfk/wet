@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>wET</title>
+    <meta name="description" content="wET - Portfolio cá nhân. Một bạn trẻ yêu thích công nghệ và đang học tập để phát triển bản thân.">
+    <meta name="keywords" content="wET, Portfolio, Web Developer, Lập trình">
+    <meta name="author" content="Võ Anh Vĩnh Kỳ">
+    <meta property="og:title" content="wET - Portfolio">
+    <meta property="og:description" content="Portfolio cá nhân của wET">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://wet-dev.netlify.app/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <title>wET - Portfolio Cá Nhân</title>
 </head>
 <body>
     <div class="container">
+        <!-- Header/Hero Section -->
         <header class="profile-header">
             <div class="hero-content">
                 <div class="intro-container">
                     <div class="profile-image">
-                        <img src="img/avatar.jpg" alt="wET" class="avatar">
+                        <img src="img/avatar.jpg" alt="wET - Avatar" class="avatar" loading="lazy">
                     </div>
                     <div class="hero-text">
                         <div class="name-badge">
                             <span>Xin chào, tôi là</span>
-                            <span><strong>wET</strong></span>
+                            <p><b>wET</b></p>
                         </div>
                         <p class="bio-text">Một bạn trẻ yêu thích công nghệ và đang học tập để phát triển bản thân</p>
                         <div class="tags">
@@ -32,53 +41,53 @@
             </div>
         </header>
 
-        <div class="info-section about-me">
-            <h3><i class="fas fa-user-circle"></i> Về tôi</h3>
+        <!-- About Section -->
+        <section class="info-section about-me">
+            <h2><i class="fas fa-user-circle"></i> Về tôi</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Xin chào! Tôi là Võ Anh Vĩnh Kỳ, một bạn trẻ 17 tuổi đến từ Đồng Nai, Việt Nam. 
-                    Tuy chỉ là người mới học lập trình nhưng tôi rất thích khám phá và tìm hiểu về công nghệ. 
-                    Mong muốn của tôi là được học hỏi thêm nhiều điều mới mẻ và chia sẻ những gì mình biết.</p>
+                    <p>Xin chào! Tôi là Võ Anh Vĩnh Kỳ, một bạn trẻ 17 tuổi đến từ Đồng Nai, Việt Nam. Tuy chỉ là người mới học lập trình nhưng tôi rất thích khám phá và tìm hiểu về công nghệ. Mong muốn của tôi là được học hỏi thêm nhiều điều mới mẻ và chia sẻ những gì mình biết.</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <i class="fas fa-code"></i>
-                        <h4>Đang học</h4>
+                        <h3>Đang học</h3>
                         <div class="skill-tags">
                             <span>HTML</span>
                             <span>CSS</span>
-                            <span>JavaScript cơ bản</span>
+                            <span>JavaScript</span>
                         </div>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-laptop-code"></i>
-                        <h4>Sở thích</h4>
+                        <h3>Sở thích</h3>
                         <div class="skill-tags">
                             <span>Tạo website</span>
                             <span>Chụp ảnh</span>
-                            <span>Chơi game</span>
+                            <span>Gaming</span>
                             <span>Nghe nhạc</span>
                         </div>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-book"></i>
-                        <h4>Mục tiêu</h4>
+                        <h3>Mục tiêu</h3>
                         <div class="skill-tags">
-                            <span>Học thêm về Web</span>
-                            <span>Tìm hiểu JavaScript</span>
+                            <span>Web Developer</span>
+                            <span>JavaScript Pro</span>
                             <span>Chia sẻ kiến thức</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="info-section blog-section">
-            <h3><i class="fas fa-pen-fancy"></i> Góc chia sẻ</h3>
+        <!-- Blog Section -->
+        <section class="info-section blog-section">
+            <h2><i class="fas fa-pen-fancy"></i> Góc chia sẻ</h2>
             <div class="posts-grid">
-                <a href="posts.html" class="post-card">
+                <a href="posts.html" class="post-card" aria-label="Xem tất cả bài viết">
                     <div class="post-image">
-                        <img src="img/thumbnail.png" alt="Post thumbnail">
+                        <img src="img/thumbnail.png" alt="Bài viết của wET" loading="lazy">
                         <div class="post-overlay">
                             <span class="read-more">
                                 <i class="fas fa-arrow-right"></i>
@@ -87,9 +96,9 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <div class="post-badge">Đang tiến hành</div>
-                        <h4>Những thứ thú vị tôi biết được</h4>
-                        <p>Chia sẽ những kinh nghiệm của bạn thân về các vấn đề khác nhau.</p>
+                        <span class="post-badge">Đang tiến hành</span>
+                        <h3>Những thứ thú vị tôi biết được</h3>
+                        <p>Chia sẻ những kinh nghiệm của bạn thân về các vấn đề khác nhau.</p>
                         <div class="post-meta">
                             <span class="post-date"><i class="far fa-clock"></i> Đang cập nhật</span>
                             <span class="post-category"><i class="fas fa-tag"></i> Giải trí</span>
@@ -97,57 +106,47 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </section>
 
-        <div class="info-section contact-section">
-            <h3><i class="fas fa-comments"></i> Liên hệ với mình</h3>
+        <!-- Contact Section -->
+        <section class="info-section contact-section">
+            <h2><i class="fas fa-comments"></i> Liên hệ với mình</h2>
             <div class="contact-grid">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=whitehair1234p@gmail.com" 
-                   target="_blank" class="contact-card">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=whitehair1234p@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-card" title="Liên hệ qua Gmail">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-info">
-                        Gmail
-                    </div>
+                    <div class="contact-info">Gmail</div>
                 </a>
-                <a href="https://www.facebook.com/anhwett" 
-                   target="_blank" class="contact-card">
+                <a href="https://www.facebook.com/anhwett" target="_blank" rel="noopener noreferrer" class="contact-card" title="Kết nối Facebook">
                     <div class="contact-icon">
                         <i class="fab fa-facebook-f"></i>
                     </div>
-                    <div class="contact-info">
-                        Facebook
-                    </div>
+                    <div class="contact-info">Facebook</div>
                 </a>
-                <a href="https://zalo.me/0837763563" 
-                   target="_blank" class="contact-card">
+                <a href="https://zalo.me/0837763563" target="_blank" rel="noopener noreferrer" class="contact-card" title="Liên hệ qua Zalo">
                     <div class="contact-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <div class="contact-info">
-                        Zalo
-                    </div>
+                    <div class="contact-info">Zalo</div>
                 </a>
-                <a href="https://discord.com/users/927208632632486784" 
-                   target="_blank" class="contact-card">
+                <a href="https://discord.com/users/927208632632486784" target="_blank" rel="noopener noreferrer" class="contact-card" title="Kết nối Discord">
                     <div class="contact-icon">
                         <i class="fab fa-discord"></i>
                     </div>
-                    <div class="contact-info">
-                        Discord
-                    </div>
+                    <div class="contact-info">Discord</div>
                 </a>
             </div>
-        </div>
+        </section>
 
-        <div class="donate-section">
+        <!-- Donate Section -->
+        <section class="donate-section">
             <div class="donate-content">
                 <div class="donate-text">
-                    <h3><i class="fas fa-gift"></i> Ủng hộ tôi một ly cafe</h3>
+                    <h2><i class="fas fa-gift"></i> Ủng hộ tôi một ly cafe</h2>
                     <p>Nếu bạn thấy những chia sẻ của tôi hữu ích và muốn động viên, một ly cafe nhỏ sẽ là động lực để tôi chia sẻ nhiều hơn.</p>
                 </div>
-                <a href="donate.html" class="donate-button">
+                <a href="donate.html" class="donate-button" title="Ủng hộ wET">
                     <span class="button-content">
                         <i class="fas fa-coffee"></i>
                         <span>Ủng hộ</span>
@@ -157,28 +156,9 @@
                     </span>
                 </a>
             </div>
-        </div>
+        </section>
     </div>
 
-    <script>
-        const texts = document.querySelectorAll('.animated-text span');
-        let currentText = 0;
-        
-        function cycleTexts() {
-            texts[currentText].style.display = 'none';
-            currentText = (currentText + 1) % texts.length;
-            texts[currentText].style.display = 'block';
-        }
-
-        setInterval(cycleTexts, 2000);
-        
-        const wave = document.querySelector('.wave');
-        setInterval(() => {
-            wave.style.transform = 'rotate(-20deg)';
-            setTimeout(() => {
-                wave.style.transform = 'rotate(0deg)';
-            }, 200);
-        }, 2000);
-    </script>
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

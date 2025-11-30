@@ -1,3 +1,7 @@
+/* ============================================
+   ANIMATIONS.CSS
+   ============================================ */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -7,23 +11,152 @@
     }
 }
 
-.fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.delay-100 {
-    animation-delay: 100ms;
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.delay-200 {
-    animation-delay: 200ms;
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.delay-300 {
-    animation-delay: 300ms;
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.page-transition {
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(79, 70, 229, 0.6);
+    }
+}
+
+/* Page Load Animation */
+body {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.profile-header {
+    animation: slideDown 0.6s ease-out;
+}
+
+.info-section {
+    animation: slideUp 0.6s ease-out;
+}
+
+.info-section:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+.info-section:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+.contact-card {
+    animation: slideUp 0.5s ease-out;
+}
+
+.post-card {
+    animation: scaleUp 0.5s ease-out;
+}
+
+.donate-section {
+    animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+/* Hover Animations */
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Intersection Observer Animation */
+.animate-on-scroll {
     opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse Animation */
+.pulse-icon {
+    animation: pulse 2s ease-in-out infinite;
 }

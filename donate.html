@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/donate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Donate | wET</title>
+    <meta name="description" content="Ủng hộ wET. Chọn phương thức thanh toán phù hợp: Ngân hàng, MoMo, ZaloPay hoặc Card">
+    <meta name="keywords" content="Donate, Ủng hộ, Thanh toán, QR Code">
+    <meta property="og:title" content="Ủng hộ wET">
+    <meta property="og:description" content="Ủng hộ wET một ly cafe">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://wet-dev.netlify.app/donate.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/donate.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <title>Ủng hộ wET | Donate</title>
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <!-- Header -->
+        <header class="header">
             <div class="header-content">
                 <div class="header-icon">
                     <i class="fas fa-gift"></i>
@@ -17,10 +25,11 @@
                 <h1>Ủng hộ cafe cho wET</h1>
                 <p class="subtitle">Cảm ơn bạn đã muốn ủng hộ tôi. Chọn phương thức thanh toán phù hợp nhất với bạn nhé!</p>
             </div>
-        </div>
+        </header>
         
-        <div class="donation-methods">
-            <a href="bank.html" class="donation-card">
+        <!-- Donation Methods -->
+        <section class="donation-methods">
+            <a href="bank.html" class="donation-card" title="Chuyển khoản qua Ngân hàng MB">
                 <div class="donation-icon">
                     <i class="fas fa-university"></i>
                 </div>
@@ -33,7 +42,7 @@
                 </div>
             </a>
             
-            <a href="momo.html" class="donation-card">
+            <a href="momo.html" class="donation-card" title="Chuyển khoản qua MoMo">
                 <div class="donation-icon momo">
                     <i class="fas fa-wallet"></i>
                 </div>
@@ -46,7 +55,7 @@
                 </div>
             </a>
             
-            <a href="zalopay.html" class="donation-card">
+            <a href="zalopay.html" class="donation-card" title="Chuyển khoản qua ZaloPay">
                 <div class="donation-icon zalopay">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
@@ -59,27 +68,29 @@
                 </div>
             </a>
 
-            <a href="updating.html" class="donation-card">
+            <a href="updating.html" class="donation-card" title="Ủng hộ bằng Card (Đang cập nhật)">
                 <div class="donation-icon tst">
                     <i class="fas fa-exchange-alt"></i>
                 </div>
                 <div class="donation-content">
                     <h2 class="donation-title">Cards</h2>
-                    <p class="donation-description">Ủng hộ bằng card điện thoại</p>
+                    <p class="donation-description">Ủng hộ bằng card điện thoại (Đang cập nhật)</p>
                 </div>
                 <div class="card-arrow">
                     <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
-        </div>
+        </section>
 
-        <div class="back-link">
-            <a href="index.html" class="back-button">
+        <!-- Back Link -->
+        <footer class="back-link">
+            <a href="index.html" class="back-button" title="Quay lại trang chủ">
                 <i class="fas fa-arrow-left"></i>
-                <span>Quay lại trang chính</span>
+                <span>Quay lại trang chủ</span>
             </a>
-        </div>
-        
+        </footer>
     </div>
+
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

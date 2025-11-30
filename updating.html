@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đang cập nhật - Tính năng đang được cập nhật trong thời gian tới.">
+    <meta name="keywords" content="Updating, Cập nhật, Nâng cấp">
+    <meta property="og:title" content="Đang cập nhật">
+    <meta property="og:description" content="Tính năng đang được cập nhật">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://wet-dev.netlify.app/updating.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/updating.css">
+    <link rel="stylesheet" href="css/animations.css">
     <title>Đang cập nhật | wET</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/updating.css">
 </head>
 <body>
     <div class="container">
+        <!-- Icon -->
         <i class="fas fa-sync-alt icon"></i>
+        
+        <!-- Title -->
         <h1>Đang cập nhật</h1>
+        
+        <!-- Message -->
         <p>Tính năng đang được cập nhật trong thời gian tới.</p>
-        <div class="progress-container">
+        
+        <!-- Progress Bar -->
+        <div class="progress-container" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến độ cập nhật">
             <div class="progress-bar"></div>
         </div>
-        <a href="index.html" class="back-link">
+        
+        <!-- Back Button -->
+        <a href="index.html" class="back-link" title="Quay lại trang chủ">
             <i class="fas fa-home"></i>
             <span>Quay lại trang chủ sau</span>
         </a>
     </div>
+
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

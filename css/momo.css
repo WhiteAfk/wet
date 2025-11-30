@@ -1,351 +1,109 @@
+/* ============================================
+   MOMO.CSS - MODERN MOMO PAYMENT PAGE
+   ============================================ */
+
 :root {
-    /* Core Colors */
-    --primary-color: #ae2070;
-    --primary-hover: #c4287e;
-    --primary-light: rgba(174, 32, 112, 0.1);
-    --secondary-color: #ec4899;
-    --accent-color: #f472b6;
-    
-    /* Text Colors */
+    --momo-red: #d32f2f;
     --text-dark: #1e293b;
     --text-light: #64748b;
-    --text-muted: #94a3b8;
-    
-    /* UI Colors */
-    --border-color: #e2e8f0;
-    --background-light: #fff5f9;
-    --background-dark: #1e1b4b;
-    
-    /* Status Colors */
-    --success-color: #10b981;
-    --success-bg: #f0fff4;
-    --success-border: #86efac;
-    --warning-color: #f59e0b;
-    --warning-bg: #fffbeb;
-    --warning-border: #fcd34d;
-    --error-color: #ef4444;
-    --error-bg: #fef2f2;
-    --error-border: #fca5a5;
-    
-    /* Shadows */
-    --container-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-    --card-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
-    --hover-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
-    
-    /* Gradients */
-    --gradient-1: linear-gradient(135deg, #ae2070 0%, #f472b6 100%);
-    --gradient-2: linear-gradient(135deg, #f472b6 0%, #ae2070 100%);
-    
-    /* Fonts */
-    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --border: #e2e8f0;
+    --shadow-md: 0 6px 12px rgba(211, 47, 47, 0.12);
+    --shadow-lg: 0 12px 24px rgba(211, 47, 47, 0.15);
 }
 
-/* Base Styles */
-body {
-    font-family: var(--font-body);
-    background: var(--background-dark);
+* {
     margin: 0;
-    padding: 1.5rem;
-    min-height: 100vh;
-    color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-    position: relative;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at top right, rgba(174, 32, 112, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at center, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
-    z-index: -1;
-    animation: gradient 15s ease infinite;
-    background-size: 200% 200%;
-}
-
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.98);
-    padding: 2.5rem;
-    border-radius: 32px;
-    box-shadow: var(--container-shadow);
-    backdrop-filter: blur(20px);
-    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-1);
-    z-index: 1;
-}
-
-h1 {
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.8em;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-h2 {
-    color: var(--text-light);
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 3rem;
-    font-weight: 500;
-    line-height: 1.6;
-    max-width: 600px;
-    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
-}
-
-.momo-info {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 24px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--card-shadow);
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 2rem;
-    animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.momo-info:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
-}
-
-.momo-info::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-1);
-}
-
-.info-list {
-    list-style: none;
     padding: 0;
-    margin: 0 0 2.5rem 0;
-    display: grid;
-    gap: 1rem;
+    box-sizing: border-box;
 }
 
-.info-list li {
-    padding: 1.2rem;
-    color: var(--text-light);
-    font-size: 1.1em;
-    background: var(--background-light);
-    border-radius: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
+html {
+    scroll-behavior: smooth;
 }
 
-.info-list li:hover {
-    transform: translateX(5px);
-    background: white;
-    box-shadow: var(--card-shadow);
-}
-
-.info-list li:last-child {
-    margin-bottom: 0;
-}
-
-.info-list li strong {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.1em;
-    padding: 0.5rem 1rem;
-    background: var(--primary-light);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-}
-
-.info-list li:hover strong {
-    background: var(--primary-color);
-    color: white;
-}
-
-.info-list li strong::after {
-    content: "Nhấp để sao chép";
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.7em;
-    opacity: 0;
-    transition: all 0.2s ease;
-    pointer-events: none;
-    white-space: nowrap;
-    z-index: 10;
-}
-
-.info-list li strong:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-    bottom: -25px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 .copy-notification {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--success-color);
+    bottom: 2rem;
+    right: 2rem;
+    background: #10b981;
     color: white;
     padding: 1rem 1.5rem;
-    border-radius: 8px;
-    font-size: 0.9em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transform: translateX(120%);
-    transition: transform 0.3s ease;
+    gap: 0.8rem;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+    pointer-events: none;
     z-index: 1000;
+    font-weight: 500;
+    border: 2px solid rgba(255,255,255,0.3);
 }
 
 .copy-notification.show {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
-.copy-notification i {
-    font-size: 1.2em;
-}
-
-.qr-code {
+.container {
     width: 100%;
-    max-width: 320px;
-    height: auto;
-    border-radius: 24px;
-    box-shadow: var(--card-shadow);
-    margin: 1rem 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 4px solid white;
-    background: white;
-    padding: 1.5rem;
-    position: relative;
-    animation: scaleIn 0.5s ease-out forwards;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    margin: 0;
 }
 
-.qr-code:hover {
-    transform: scale(1.02);
-    box-shadow: var(--hover-shadow);
-}
-
-.qr-code::before {
-    content: '📱 Quét mã QR MoMo';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gradient-1);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 100px;
-    font-size: 0.9em;
-    font-weight: 600;
-    white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(174, 32, 112, 0.3);
-    letter-spacing: 0.01em;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateX(-50%) translateY(0px); }
-    50% { transform: translateX(-50%) translateY(-5px); }
-    100% { transform: translateX(-50%) translateY(0px); }
-}
-
-.back-link {
+.container h1 {
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    width: 100%;
+    animation: slideDown 0.6s ease-out;
 }
 
-.back-link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 1rem 2rem;
-    border-radius: 100px;
-    background: var(--background-light);
-    font-size: 1.1em;
-    border: 1px solid var(--border-color);
-}
-
-.back-link a:hover {
-    transform: translateX(-3px);
-    color: var(--primary-color);
-    background: white;
-    box-shadow: var(--hover-shadow);
-}
-
-.back-link a:hover i {
-    transform: translateX(-4px);
-}
-
-.back-link i {
-    transition: transform 0.3s ease;
-}
-
-/* Animations */
-@keyframes fadeIn {
+@keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.container h2 {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-align: center;
+    font-weight: 400;
+}
+
+.momo-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    flex: 1;
+    animation: slideUp 0.6s ease-out 0.2s both;
 }
 
 @keyframes slideUp {
@@ -359,177 +117,206 @@ h2 {
     }
 }
 
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.info-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 18px;
+    border: 3px solid var(--momo-red);
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.15), var(--shadow-md);
+    transition: all 0.3s ease;
 }
 
-/* Responsive Design */
+.info-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(211, 47, 47, 0.3), var(--shadow-lg);
+}
+
+.info-list span {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+}
+
+.info-list strong {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 800;
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+    box-shadow: 0 0 15px rgba(211, 47, 47, 0.3);
+}
+
+.info-list strong:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(211, 47, 47, 0.5);
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    border: 4px solid var(--momo-red);
+    box-shadow: 0 0 25px rgba(211, 47, 47, 0.3), var(--shadow-lg);
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.qr-code:hover {
+    transform: scale(1.05);
+}
+
+.back-link {
+    text-align: center;
+    padding: 2rem 0 0;
+}
+
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(211, 47, 47, 0.3), var(--shadow-md);
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.back-link a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(211, 47, 47, 0.5), var(--shadow-lg);
+    border-color: rgba(255,255,255,0.6);
+}
+
 @media screen and (max-width: 1024px) {
-    body {
-        padding: 1rem;
-    }
-
     .container {
-        max-width: 600px;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
-    h1 {
-        font-size: 2.4em;
+    .container h1 {
+        font-size: 2.2rem;
     }
 
-    h2 {
-        font-size: 1.15em;
+    .momo-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .qr-code {
+        max-width: 300px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
     .container {
-        max-width: 100%;
-        padding: 1.5rem;
-        border-radius: 16px;
-        margin: 0 auto;
+        min-height: auto;
+        padding: 1.2rem;
+        gap: 1.2rem;
     }
 
-    h1 {
-        font-size: 1.8em;
-        margin-bottom: 0.5rem;
+    .container h1 {
+        font-size: 1.8rem;
     }
 
-    h2 {
-        font-size: 1em;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
+    .container h2 {
+        font-size: 1rem;
     }
 
     .momo-info {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
+        gap: 1.5rem;
     }
 
     .info-list {
-        margin-bottom: 1.5rem;
-        gap: 0.65rem;
+        gap: 1.2rem;
     }
 
     .info-list li {
-        font-size: 0.9em;
-        padding: 0.7rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-    }
-
-    .info-list li strong {
-        font-size: 0.95em;
-        padding: 0.35rem 0.7rem;
+        padding: 1.2rem;
     }
 
     .qr-code {
-        max-width: 240px;
-        height: auto;
-        margin: 1rem auto;
-        padding: 0.8rem;
-        border: 3px solid white;
-    }
-
-    .qr-code::before {
-        font-size: 0.75em;
-        padding: 0.4rem 0.9rem;
-        top: -10px;
-    }
-
-    .back-link {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
+        max-width: 250px;
     }
 
     .back-link a {
-        padding: 0.7rem 1.4rem;
-        font-size: 0.95em;
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        padding: 0.75rem;
-    }
-
     .container {
-        padding: 1.2rem;
-        border-radius: 14px;
-        margin: 0 auto;
+        padding: 1rem;
     }
 
-    h1 {
-        font-size: 1.6em;
+    .container h1 {
+        font-size: 1.5rem;
     }
 
-    h2 {
-        font-size: 0.85em;
-        margin-bottom: 1rem;
+    .container h2 {
+        font-size: 0.9rem;
     }
 
-    .momo-info {
-        padding: 0.85rem;
+    .info-list {
+        gap: 1rem;
     }
 
     .info-list li {
-        font-size: 0.85em;
-        padding: 0.55rem;
+        padding: 1rem;
     }
 
-    .info-list li span {
-        font-size: 0.9em;
-    }
-
-    .info-list li strong {
-        font-size: 0.9em;
-        padding: 0.25rem 0.5rem;
+    .info-list strong {
+        font-size: 1.2rem;
     }
 
     .qr-code {
         max-width: 200px;
-        padding: 0.7rem;
-        border: 2px solid white;
-        margin: 0.75rem auto;
-    }
-
-    .qr-code::before {
-        font-size: 0.65em;
-        padding: 0.3rem 0.6rem;
-        top: -8px;
-    }
-
-    .back-link {
-        margin-top: 1.5rem;
-        padding-top: 1rem;
     }
 
     .back-link a {
-        padding: 0.6rem 1rem;
-        font-size: 0.85em;
-        gap: 0.4rem;
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 0.8rem;
     }
 
-    .back-link a i {
-        font-size: 0.9em;
+    .container h1 {
+        font-size: 1.3rem;
+    }
+
+    .qr-code {
+        max-width: 180px;
+    }
+
+    .back-link a {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
     }
 }
