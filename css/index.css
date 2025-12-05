@@ -378,6 +378,19 @@ body {
     justify-content: center;
     color: white;
     font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.contact-icon.facebook-logo {
+    background: #1877f2;
+}
+
+.contact-icon.discord-logo {
+    background: #5865f2;
 }
 
 .contact-info {

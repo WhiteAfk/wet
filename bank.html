@@ -9,7 +9,6 @@
     <meta property="og:description" content="Chuyển khoản qua MB Bank với mã QR">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://wet-dev.netlify.app/bank.html">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-2bnTW3xvzqMtNAlQyMsgxx3r8mOGMQRLIUQwp2rywI+95d8DwxatJqr8z21FC5RFsAVV0m0DT5fKFm7mYL/D0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/bank.css">
     <link rel="stylesheet" href="css/animations.css">
     <title>Chuyển khoản Ngân hàng | wET</title>
@@ -17,15 +16,14 @@
 <body>
     <!-- Copy Notification -->
     <div class="copy-notification" role="alert" aria-live="polite">
-        <i class="fas fa-check-circle"></i>
-        <span>Đã sao chép vào clipboard!</span>
+        <span>✅ Đã sao chép vào clipboard!</span>
     </div>
     
     <div class="container">
         <!-- Header -->
         <header class="header">
             <div class="header-icon">
-                <i class="fas fa-university"></i>
+                🏦
             </div>
             <h1>Chuyển khoản ngân hàng</h1>
             <p class="subtitle">Cảm ơn bạn đã quan tâm ủng hộ. Vui lòng điền thông tin bên dưới.</p>
@@ -37,18 +35,18 @@
             <div class="left-column">
                 <!-- Bank Info Card -->
                 <div class="info-card">
-                    <h2><i class="fas fa-info-circle"></i> Thông tin tài khoản</h2>
+                    <h2>ℹ️ Thông tin tài khoản</h2>
                     <div class="info-grid">
                         <div class="info-item">
-                            <span class="label"><i class="fas fa-university"></i> Ngân hàng</span>
+                            <span class="label">🏦 Ngân hàng</span>
                             <span class="value">MB Bank (Ngân hàng Quân Đội)</span>
                         </div>
                         <div class="info-item">
-                            <span class="label"><i class="fas fa-credit-card"></i> Số tài khoản</span>
+                            <span class="label">💳 Số tài khoản</span>
                             <span class="value highlight" onclick="copyToClipboard('5088882345', 'số tài khoản')" role="button" tabindex="0" title="Nhấp để sao chép">5088882345</span>
                         </div>
                         <div class="info-item">
-                            <span class="label"><i class="fas fa-user"></i> Chủ tài khoản</span>
+                            <span class="label">👤 Chủ tài khoản</span>
                             <span class="value highlight" onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên tài khoản')" role="button" tabindex="0" title="Nhấp để sao chép">Võ Anh Vĩnh Kỳ</span>
                         </div>
                     </div>
@@ -57,25 +55,20 @@
                 <!-- Notice Card -->
                 <div class="notice-card" role="complementary">
                     <div class="notice-header">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Vui lòng kiểm tra kỹ thông tin</h3>
+                        <h3>🛡️ Vui lòng kiểm tra kỹ thông tin</h3>
                     </div>
                     <ul class="notice-list">
                         <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Tên người nhận: <strong>Võ Anh Vĩnh Kỳ</strong></span>
+                            <span>✅ Tên người nhận: <strong>Võ Anh Vĩnh Kỳ</strong></span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Số tài khoản: <strong>5088882345</strong></span>
+                            <span>✅ Số tài khoản: <strong>5088882345</strong></span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Số tiền chuyển khoản phải khớp với số tiền đã nhập</span>
+                            <span>✅ Số tiền chuyển khoản phải khớp với số tiền đã nhập</span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Nội dung chuyển khoản phải giống như bạn đã điền</span>
+                            <span>✅ Nội dung chuyển khoản phải giống như bạn đã điền</span>
                         </li>
                     </ul>
                 </div>
@@ -84,11 +77,11 @@
             <!-- Right Column: Form -->
             <div class="right-column">
                 <div class="form-card">
-                    <h2><i class="fas fa-qrcode"></i> Tạo mã QR chuyển khoản</h2>
+                    <h2>📱 Tạo mã QR chuyển khoản</h2>
                     <div class="form-content">
                         <!-- Amount Input -->
                         <div class="input-group">
-                            <label for="amount"><i class="fas fa-coins"></i> Số tiền chuyển khoản</label>
+                            <label for="amount">💰 Số tiền chuyển khoản</label>
                             <div class="input-wrapper">
                                 <input type="text" id="amount" placeholder="Nhập số tiền (VD: 10,000 VNĐ)" autocomplete="off" inputmode="numeric">
                                 <span class="input-icon">VNĐ</span>
@@ -97,7 +90,7 @@
 
                         <!-- Message Input -->
                         <div class="input-group">
-                            <label for="addInfo"><i class="fas fa-comment-alt"></i> Nội dung chuyển khoản</label>
+                            <label for="addInfo">💬 Nội dung chuyển khoản</label>
                             <div class="input-wrapper">
                                 <input type="text" id="addInfo" placeholder="Nhập nội dung chuyển khoản" autocomplete="off">
                             </div>
@@ -109,8 +102,7 @@
                         <!-- Generate Button -->
                         <button class="btn-generate" id="generateBtn" onclick="generateQR()" type="button">
                             <span class="btn-content">
-                                <i class="fas fa-qrcode"></i>
-                                <span>Tạo mã QR</span>
+                                <span>📱 Tạo mã QR</span>
                             </span>
                         </button>
 
@@ -126,8 +118,7 @@
         <!-- Back Link -->
         <footer class="back-link">
             <a href="donate.html" class="back-button" title="Quay lại trang Donate">
-                <i class="fas fa-arrow-left"></i>
-                <span>Quay lại trang Donate</span>
+                <span>← Quay lại trang Donate</span>
             </a>
         </footer>
     </div>
