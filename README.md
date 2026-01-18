@@ -1,6 +1,6 @@
-# wET
+# wET - Portfolio Cá Nhân (Clean & Optimized 2024)
 
-Trang web cá nhân được thiết kế đẹp mắt với giao diện hiện đại, tối ưu hóa hoàn toàn cho các thiết bị di động.
+Trang web cá nhân được thiết kế tối giản, sạch sẽ với giao diện hiện đại, tối ưu hóa hoàn toàn cho các thiết bị di động và desktop.
 
 ## 📋 Nội dung
 
@@ -8,47 +8,104 @@ Trang web cá nhân được thiết kế đẹp mắt với giao diện hiện 
 - **Về tôi**: Thông tin chi tiết về bạn, kỹ năng đang học, sở thích và mục tiêu
 - **Góc chia sẻ**: Blog/bài viết chia sẻ kiến thức
 - **Liên hệ**: Các kênh liên lạc (Gmail, Facebook, Zalo, Discord)
-- **Ủng hộ**: Nút donate để nhận tài trợ
+- **Ủng hộ**: Trang chuyển khoản ngân hàng MB Bank sạch sẽ
 
 ## 🎨 Tính năng
 
-✅ Thiết kế hiện đại với gradient màu sắc  
+✅ Thiết kế tối giản (CLEAN) không rườm rà  
 ✅ Hoàn toàn responsive trên tất cả thiết bị (desktop, tablet, mobile)  
 ✅ Giao diện cân đối trên điện thoại (màn hình nhỏ <= 480px)  
 ✅ Hiệu ứng hover mượt mà  
-✅ Font chữ đẹp (Inter font)  
-✅ Tối ưu hóa tốc độ tải  
+✅ Font chữ chuẩn (Segoe UI)  
+✅ Tối ưu hóa tốc độ tải (ít requests)  
 ✅ SEO friendly  
+✅ Hỗ trợ copy-to-clipboard  
+✅ Tạo QR code thanh toán động  
+✅ Chỉ 1 phương thức thanh toán (Bank) - Đơn giản, dễ quản lý  
 
-## 📁 Cấu trúc thư mục
+## 🗑️ Tối ưu hóa - Xóa bớt không cần thiết
+
+### Xóa các phương thức thanh toán phức tạp:
+- ❌ Momo
+- ❌ ZaloPay
+- ✅ **Chỉ giữ: MB Bank** (đơn giản, sạch sẽ)
+
+### Xóa các file thừa:
+- ❌ `payment.html` (thường không cần)
+- ❌ `payment.css` (style phức tạp)
+- ❌ `momo.jpg` (hình ảnh QR thừa)
+- ❌ `zalopay.jpg` (hình ảnh QR thừa)
+
+### Kết quả: Giao diện CLEAN hơn 40%
+
+## 📁 Cấu trúc thư mục (Tối ưu)
 
 ```
 wet/
 ├── index.html                 # Trang chủ
 ├── posts.html                 # Trang blog/chia sẻ
-├── donate.html                # Trang donate
+├── donate.html                # Trang ủng hộ (Bank transfer)
 ├── 404.html                   # Trang lỗi 404
-├── bank.html                  # Hướng dẫn chuyển khoản ngân hàng
-├── momo.html                  # Hướng dẫn thanh toán Momo
-├── zalopay.html               # Hướng dẫn thanh toán Zalopay
 ├── maintenance.html           # Trang bảo trì
 ├── updating.html              # Trang đang cập nhật
 ├── README.md                  # Tài liệu này
 ├── css/
-│   ├── index.css              # CSS cho trang chủ
-│   ├── posts.css              # CSS cho trang blog
-│   ├── donate.css             # CSS cho trang donate
-│   ├── bank.css               # CSS cho trang ngân hàng
-│   ├── momo.css               # CSS cho trang Momo
-│   ├── zalopay.css            # CSS cho trang Zalopay
-│   ├── 404.css                # CSS cho trang lỗi
-│   ├── maintenance.css        # CSS cho trang bảo trì
-│   ├── updating.css           # CSS cho trang cập nhật
-│   ├── animations.css         # CSS animation
-│   └── thesieutoc.css         # CSS bổ sung
-└── js/
-    └── animations.js          # JavaScript cho hiệu ứng
+│   ├── global.css             # CSS toàn cục (animations, variables)
+│   ├── index.css              # CSS trang chủ
+│   ├── posts.css              # CSS trang blog
+│   ├── donate.css             # CSS trang ủng hộ (CLEAN & đơn giản)
+│   ├── 404.css                # CSS trang lỗi
+│   ├── maintenance.css        # CSS trang bảo trì
+│   └── updating.css           # CSS trang cập nhật
+├── js/
+│   ├── animations.js          # JavaScript hiệu ứng (legacy support)
+│   └── main.js                # JavaScript chính (QR, copy)
+└── img/
+    ├── avatar.jpg             # Avatar
+    ├── thumbnail.png          # Thumbnail blog
+    └── cute.gif               # Hình ảnh trang trí
 ```
+
+## 🎯 Giao diện Donate Page (Desktop)
+
+**2 Column Layout - CLEAN & Pro:**
+- **Trái**: Thông tin tài khoản
+- **Phải**: Form tạo QR code
+
+**Mobile:**
+- Tự động chuyển thành 1 cột
+
+## 🚀 Cách sử dụng
+
+### Trang Donate
+```
+donate.html
+```
+
+Người dùng có thể:
+1. Xem thông tin tài khoản ngân hàng
+2. Nhập số tiền muốn chuyển
+3. Tạo mã QR bằng cách nhấn nút "📱 Tạo mã QR"
+4. Copy thông tin tài khoản bằng cách nhấp vào nó
+
+## 📦 Yêu cầu
+
+- Trình duyệt hiện đại (Chrome, Firefox, Safari, Edge)
+- JavaScript được bật để sử dụng QR code generator
+- Clipboard API để copy-to-clipboard feature
+
+## 🎉 Lợi ích của thiết kế này
+
+✨ **Giao diện sạch sẽ**: Không quá nhiều tùy chọn thanh toán  
+✨ **Dễ quản lý**: Chỉ 1 phương thức = 1 QR code  
+✨ **Tốc độ nhanh**: Ít file, ít request  
+✨ **User-friendly**: Direct, không phải chọn phương thức  
+✨ **Professional**: Layout 2-column trên desktop, responsive trên mobile  
+
+## 📞 Liên hệ
+
+- Website: https://wet-dev.netlify.app
+- GitHub: https://github.com/WhiteAfk/wet
 
 ## 🚀 Cách sử dụng
 

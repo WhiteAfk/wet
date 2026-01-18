@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mã QR thanh toán MB Bank">
+    <meta name="keywords" content="QR Code, Thanh toán">
+    <meta property="og:title" content="Mã QR Thanh toán">
+    <link rel="canonical" href="https://wet-dev.netlify.app/qr-result.html">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/qr-result.css">
+    <title>Mã QR Thanh toán | wET</title>
+</head>
+<body>
+    <div class="copy-notification" role="alert" aria-live="polite">
+        <span>✅ Đã sao chép!</span>
+    </div>
+
+    <div class="qr-container">
+        <header class="qr-header">
+            <h1>📱 Mã QR Thanh toán</h1>
+        </header>
+
+        <main class="qr-main">
+            <div class="qr-display">
+                <img id="qrImage" alt="QR Code" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Crect fill='%23f0f0f0' width='280' height='280'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='14' fill='%23999' transform='translate(0,-8)'%3ETải QR...%3C/text%3E%3C/svg%3E">
+            </div>
+
+            <div class="qr-info">
+                <div class="info-group">
+                    <div class="info-item">
+                        <span class="label">Ngân hàng</span>
+                        <span class="value">MB Bank</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Số TK</span>
+                        <span class="value copy-btn" onclick="copyToClipboard('5088882345', 'số tài khoản')">5088882345</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Chủ TK</span>
+                        <span class="value copy-btn" onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên')">Võ Anh Vĩnh Kỳ</span>
+                    </div>
+                </div>
+
+                <div class="amount-info">
+                    <div class="amount-item">
+                        <span class="label">Số tiền</span>
+                        <span class="amount" id="amountDisplay">--</span>
+                    </div>
+                    <div class="amount-item">
+                        <span class="label">Nội dung</span>
+                        <span class="message" id="messageDisplay">--</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-copy" onclick="copyTransferInfo()">📋 Copy</button>
+                    <button class="btn-download" onclick="downloadQR()">⬇️ Tải</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="qr-footer">
+            <a href="donate.html">← Donate</a>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const n = document.querySelector('.copy-notification');
+                if (n) {
+                    n.classList.add('show');
+                    n.querySelector('span').textContent = `✅ Đã sao chép ${type}!`;
+                    setTimeout(() => n.classList.remove('show'), 2000);
+                }
+            }).catch(() => alert('Copy thất bại'));
+        }
+
+        function getQueryParam(param) {
+            return new URLSearchParams(window.location.search).get(param);
+        }
+
+        function copyTransferInfo() {
+            const amount = document.getElementById('amountDisplay').textContent;
+            const message = document.getElementById('messageDisplay').textContent;
+            const text = `MB Bank\nSố TK: 5088882345\nChủ TK: Võ Anh Vĩnh Kỳ\nSố tiền: ${amount}\nNội dung: ${message}`;
+            navigator.clipboard.writeText(text).then(() => {
+                const n = document.querySelector('.copy-notification');
+                if (n) {
+                    n.classList.add('show');
+                    n.querySelector('span').textContent = '✅ Đã sao chép thông tin!';
+                    setTimeout(() => n.classList.remove('show'), 2000);
+                }
+            });
+        }
+
+        function downloadQR() {
+            const img = document.getElementById('qrImage');
+            if (!img || !img.src) { alert('QR chưa sẵn sàng'); return; }
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const newImg = new Image();
+            newImg.crossOrigin = 'anonymous';
+            newImg.onload = () => {
+                canvas.width = newImg.width;
+                canvas.height = newImg.height;
+                ctx.drawImage(newImg, 0, 0);
+                canvas.toBlob(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `QR_${Date.now()}.png`;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    const n = document.querySelector('.copy-notification');
+                    if (n) {
+                        n.classList.add('show');
+                        n.querySelector('span').textContent = '✅ Tải xuống thành công!';
+                        setTimeout(() => n.classList.remove('show'), 2000);
+                    }
+                }, 'image/png');
+            };
+            newImg.onerror = () => {
+                const link = document.createElement('a');
+                link.href = img.src;
+                link.download = `QR_${Date.now()}.png`;
+                link.click();
+            };
+            newImg.src = img.src;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const amount = getQueryParam('amount');
+            const addInfo = getQueryParam('addInfo');
+
+            if (amount && addInfo) {
+                const formatted = parseInt(amount).toLocaleString('vi-VN');
+                document.getElementById('amountDisplay').textContent = formatted + ' VNĐ';
+                document.getElementById('messageDisplay').textContent = decodeURIComponent(addInfo);
+
+                const accountNo = '5088882345';
+                const accountName = 'Vo Anh Vinh Ky';
+                const qrUrl = `https://img.vietqr.io/image/MBBank-${accountNo}-qr_only.png?amount=${amount}&addInfo=${encodeURIComponent(addInfo)}&accountName=${encodeURIComponent(accountName)}`;
+                
+                const qrImg = document.getElementById('qrImage');
+                qrImg.src = qrUrl;
+                qrImg.onerror = () => {
+                    const fallback = `https://qr-server.com/api/qr?size=280x280&data=${encodeURIComponent('00020126360014com.vietqr01051000370406' + accountNo + '0712' + accountName + '52040000530398540' + amount + '9627302011200067050300000000000063048B8D')}`;
+                    qrImg.src = fallback;
+                };
+            } else {
+                setTimeout(() => window.location.href = 'donate.html', 1000);
+            }
+        });
+    </script>
+    <script src="js/animations.js" defer></script>
+</body>
+</html>

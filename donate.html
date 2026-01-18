@@ -3,99 +3,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ủng hộ wET. Chọn phương thức thanh toán phù hợp: Ngân hàng, MoMo, ZaloPay hoặc Card">
+    <meta name="description" content="Ủng hộ wET qua chuyển khoản MB Bank">
     <meta name="keywords" content="Donate, Ủng hộ, Thanh toán, QR Code">
     <meta property="og:title" content="Ủng hộ wET">
-    <meta property="og:description" content="Ủng hộ wET một ly cafe">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://wet-dev.netlify.app/donate.html">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/donate.css">
-    <link rel="stylesheet" href="css/animations.css">
     <title>Ủng hộ wET | Donate</title>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="header-icon">
-                    🎁
-                </div>
-                <h1>Ủng hộ cafe cho wET</h1>
-                <p class="subtitle">Cảm ơn bạn đã muốn ủng hộ tôi. Chọn phương thức thanh toán phù hợp nhất với bạn nhé!</p>
-            </div>
+    <div class="copy-notification" role="alert" aria-live="polite">
+        <span>✅ Đã sao chép!</span>
+    </div>
+
+    <div class="donate-container">
+        <header class="donate-header">
+            <h1>🎁 Ủng hộ wET</h1>
+            <p>Cảm ơn! Chuyển khoản MB Bank</p>
         </header>
-        
-        <!-- Donation Methods -->
-        <section class="donation-methods">
-            <a href="bank.html" class="donation-card" title="Chuyển khoản qua Ngân hàng MB">
-                <div class="donation-icon bank-logo">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
-                        <path d="M12 2L2 7v5h20V7L12 2zm0 2.5L19.5 7v3h-15V7l7.5-2.5zM2 13h20v8H2v-8zm3 2v4h2v-4H5zm3 0v4h2v-4H8zm3 0v4h2v-4h-2zm3 0v4h2v-4h-2zm3 0v4h2v-4h-2z"/>
-                    </svg>
-                </div>
-                <div class="donation-content">
-                    <h2 class="donation-title">Chuyển khoản Ngân hàng</h2>
-                    <p class="donation-description">Chuyển khoản qua MB Bank với mã QR</p>
-                </div>
-                <div class="card-arrow">
-                    →
-                </div>
-            </a>
-            
-            <a href="momo.html" class="donation-card" title="Chuyển khoản qua MoMo">
-                <div class="donation-icon momo-logo">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm3-6c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z" fill="white"/>
-                    </svg>
-                </div>
-                <div class="donation-content">
-                    <h2 class="donation-title">Ví MoMo</h2>
-                    <p class="donation-description">Chuyển tiền nhanh chóng qua ví MoMo</p>
-                </div>
-                <div class="card-arrow">
-                    →
-                </div>
-            </a>
-            
-            <a href="zalopay.html" class="donation-card" title="Chuyển khoản qua ZaloPay">
-                <div class="donation-icon zalopay-logo">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-                    </svg>
-                </div>
-                <div class="donation-content">
-                    <h2 class="donation-title">ZaloPay</h2>
-                    <p class="donation-description">Thanh toán dễ dàng qua ZaloPay</p>
-                </div>
-                <div class="card-arrow">
-                    →
-                </div>
-            </a>
 
-            <a href="updating.html" class="donation-card" title="Ủng hộ bằng Card (Đang cập nhật)">
-                <div class="donation-icon tst">
-                    💳
+        <main class="donate-main">
+            <div class="card bank-card">
+                <h2>💳 Thông tin</h2>
+                <div class="info-row">
+                    <span class="label">Ngân hàng</span>
+                    <span class="value">MB Bank</span>
                 </div>
-                <div class="donation-content">
-                    <h2 class="donation-title">Cards</h2>
-                    <p class="donation-description">Ủng hộ bằng card điện thoại (Đang cập nhật)</p>
+                <div class="info-row">
+                    <span class="label">Số TK</span>
+                    <span class="value copy-btn" onclick="copyToClipboard('5088882345', 'số tài khoản')">5088882345</span>
                 </div>
-                <div class="card-arrow">
-                    →
+                <div class="info-row">
+                    <span class="label">Chủ TK</span>
+                    <span class="value copy-btn" onclick="copyToClipboard('Võ Anh Vĩnh Kỳ', 'tên')">Võ Anh Vĩnh Kỳ</span>
                 </div>
-            </a>
-        </section>
+            </div>
 
-        <!-- Back Link -->
-        <footer class="back-link">
-            <a href="index.html" class="back-button" title="Quay lại trang chủ">
-                <span>← Quay lại trang chủ</span>
-            </a>
+            <div class="card form-card">
+                <h2>📱 Tạo QR</h2>
+                <div class="form-group">
+                    <label for="amount">Số tiền (VNĐ)</label>
+                    <input type="text" id="amount" placeholder="50000" inputmode="numeric" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="addInfo">Nội dung</label>
+                    <input type="text" id="addInfo" placeholder="(tùy chọn)" autocomplete="off">
+                </div>
+                <button class="btn-primary" onclick="redirectToQR()">📱 Tạo QR</button>
+            </div>
+        </main>
+
+        <footer class="donate-footer">
+            <a href="index.html">← Trang chủ</a>
         </footer>
     </div>
 
+    <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
 </body>
 </html>
