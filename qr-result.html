@@ -86,6 +86,8 @@
                 if (e.button === 2) e.preventDefault();
             });
         });
+
+        function copyToClipboard(text, type) {
             navigator.clipboard.writeText(text).then(() => {
                 const n = document.querySelector('.copy-notification');
                 if (n) {
