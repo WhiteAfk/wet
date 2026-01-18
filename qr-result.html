@@ -22,8 +22,8 @@
         </header>
 
         <main class="qr-main">
-            <div class="qr-display">
-                <img id="qrImage" alt="QR Code" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Crect fill='%23f0f0f0' width='280' height='280'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='14' fill='%23999' transform='translate(0,-8)'%3ETải QR...%3C/text%3E%3C/svg%3E">
+            <div class="qr-display" id="qrDisplay">
+                <img id="qrImage" alt="QR Code" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Crect fill='%23f0f0f0' width='280' height='280'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='14' fill='%23999' transform='translate(0,-8)'%3ETải QR...%3C/text%3E%3C/svg%3E" draggable="false">
             </div>
 
             <div class="qr-info">
@@ -66,7 +66,26 @@
     </div>
 
     <script>
-        function copyToClipboard(text, type) {
+        document.addEventListener('DOMContentLoaded', () => {
+            const qrDisplay = document.getElementById('qrDisplay');
+            const qrImage = document.getElementById('qrImage');
+
+            qrDisplay.addEventListener('contextmenu', (e) => e.preventDefault());
+            
+            qrImage.addEventListener('dragstart', (e) => e.preventDefault());
+            qrImage.addEventListener('drag', (e) => e.preventDefault());
+            
+            qrDisplay.addEventListener('copy', (e) => e.preventDefault());
+            
+            qrDisplay.addEventListener('mousedown', (e) => {
+                if (e.button === 2) e.preventDefault();
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) e.preventDefault();
+            });
+
+            qrImage.addEventListener('mousedown', (e) => {
+                if (e.button === 2) e.preventDefault();
+            });
+        });
             navigator.clipboard.writeText(text).then(() => {
                 const n = document.querySelector('.copy-notification');
                 if (n) {

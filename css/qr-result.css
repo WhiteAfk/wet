@@ -44,10 +44,24 @@
     border: 2px solid var(--primary);
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: auto;
 }
 
 #qrImage {
     width: 320px;
+    height: 320px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+}
     height: 320px;
     border-radius: 10px;
     animation: fadeIn 0.5s ease-out;
